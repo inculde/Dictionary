@@ -16,5 +16,21 @@ namespace Project
         {
             InitializeComponent();
         }
+
+        private void kilépésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void megnyitásToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openOFD = new OpenFileDialog();
+            openOFD.ShowDialog();
+        }
+
+        private void tanulásiSegédletToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
