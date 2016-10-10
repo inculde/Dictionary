@@ -40,6 +40,7 @@
             this.szótárfüzetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tesztToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisztikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.szovegTxt = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             this.fájlToolStripMenuItem.Name = "fájlToolStripMenuItem";
             this.fájlToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fájlToolStripMenuItem.Text = "Fájl";
+            this.fájlToolStripMenuItem.Click += new System.EventHandler(this.fájlToolStripMenuItem_Click);
             // 
             // megnyitásToolStripMenuItem
             // 
@@ -78,6 +80,7 @@
             this.bezárásToolStripMenuItem.Name = "bezárásToolStripMenuItem";
             this.bezárásToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.bezárásToolStripMenuItem.Text = "Bezárás";
+            this.bezárásToolStripMenuItem.Click += new System.EventHandler(this.bezárásToolStripMenuItem_Click);
             // 
             // kilépésToolStripMenuItem
             // 
@@ -98,8 +101,9 @@
             // szótárToolStripMenuItem
             // 
             this.szótárToolStripMenuItem.Name = "szótárToolStripMenuItem";
-            this.szótárToolStripMenuItem.Size = new System.Drawing.Size(169, 26);
+            this.szótárToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.szótárToolStripMenuItem.Text = "Szótár";
+            this.szótárToolStripMenuItem.Click += new System.EventHandler(this.szótárToolStripMenuItem_Click);
             // 
             // megjelenítésToolStripMenuItem
             // 
@@ -136,11 +140,21 @@
             this.statisztikaToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.statisztikaToolStripMenuItem.Text = "Statisztika";
             // 
+            // szovegTxt
+            // 
+            this.szovegTxt.Location = new System.Drawing.Point(12, 31);
+            this.szovegTxt.Multiline = true;
+            this.szovegTxt.Name = "szovegTxt";
+            this.szovegTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.szovegTxt.Size = new System.Drawing.Size(439, 392);
+            this.szovegTxt.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(482, 453);
+            this.Controls.Add(this.szovegTxt);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -166,6 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem szótárfüzetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tesztToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statisztikaToolStripMenuItem;
+        private System.Windows.Forms.TextBox szovegTxt;
     }
 }
 
