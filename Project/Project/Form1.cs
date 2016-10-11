@@ -28,7 +28,7 @@ namespace Project
             OpenFileDialog openOFD = new OpenFileDialog();
             if (openOFD.ShowDialog() == DialogResult.OK)
             {
-                szovegTxt.Text = File.ReadAllText(openOFD.FileName);
+                szovegTxt.Text = File.ReadAllText(openOFD.FileName, Encoding.UTF8);
             }
             
         }
