@@ -28,6 +28,7 @@ namespace Project
             OpenFileDialog openOFD = new OpenFileDialog();
             if (openOFD.ShowDialog() == DialogResult.OK)
             {
+                openOFD.Filter = "Szövegfájlok | *.txt";
                 szovegTxt.Text = File.ReadAllText(openOFD.FileName, Encoding.UTF8);
             }
             
