@@ -13,6 +13,9 @@ namespace Project
 {
     public partial class Form1 : Form
     {
+        Form2 BeallitasForm = new Form2();
+        Form3 SzoszedetForm = new Form3();
+
         public Form1()
         {
             InitializeComponent();
@@ -52,9 +55,14 @@ namespace Project
 
         private void szótárToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           Form2 BeallitasForm= new Form2();
+           
             BeallitasForm.Visible = true;
             
+        }
+
+        private void szótárfüzetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SzoszedetForm.Visible = true;
         }
     }
 }
