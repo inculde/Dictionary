@@ -1,0 +1,6 @@
+1. Textbox beszúrása (name:szovegTxt ,multiline:true, scrollbar:both)
+2. Button beszúrása (text: Megnyitás)
+3. Button eseményét megírni
+	-OpenFileDialog létrehozása
+	-Feltételvizsgálat(if (ofd.ShowDialog() == DialogResult.OK))
+4. A feltétel vizsgálat 2 féleképpen (txt legyen először ansi kódolású!)
