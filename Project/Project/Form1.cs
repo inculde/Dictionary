@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace Project
 {
     public partial class Form1 : Form
     {
+        static string conString = ConfigurationManager.ConnectionStrings["Project.Properties.Settings.dbConnectionString"].ConnectionString;
+        static SqlConnection con = new SqlConnection(conString);
+
         Form2 BeallitasForm = new Form2();
-        Form3 SzoszedetForm = new Form3();
+        szoszedet SzoszedetForm = new szoszedet(con);
 
         public Form1()
         {
@@ -54,15 +59,25 @@ namespace Project
         }
 
         private void szótárToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-            BeallitasForm.Visible = true;
-            
+        {           
+            BeallitasForm.ShowDialog();            
         }
 
         private void szótárfüzetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SzoszedetForm.Visible = true;
+            SzoszedetForm.ShowDialog();
+        }
+       
+
+        private void pro_MouseClick(object sender, MouseEventArgs e)
+        {
+            string keresett = (sender as Label).Text;
+
+            //MessageBox.Show((sender as Label).Location.ToString() + "\n" + this.Location.ToString());
+            Form3 szotar = new Form3(keresett, con, 1);
+            szotar.Width = this.Width;
+            
+            szotar.ShowDialog();
         }
     }
 }

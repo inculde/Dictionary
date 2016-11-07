@@ -41,6 +41,7 @@
             this.tesztToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statisztikaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.szovegTxt = new System.Windows.Forms.TextBox();
+            this.pro = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,42 +127,55 @@
             // szótárfüzetToolStripMenuItem
             // 
             this.szótárfüzetToolStripMenuItem.Name = "szótárfüzetToolStripMenuItem";
-            this.szótárfüzetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.szótárfüzetToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.szótárfüzetToolStripMenuItem.Text = "Szótárfüzet";
             this.szótárfüzetToolStripMenuItem.Click += new System.EventHandler(this.szótárfüzetToolStripMenuItem_Click);
             // 
             // tesztToolStripMenuItem
             // 
             this.tesztToolStripMenuItem.Name = "tesztToolStripMenuItem";
-            this.tesztToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tesztToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.tesztToolStripMenuItem.Text = "Teszt";
             // 
             // statisztikaToolStripMenuItem
             // 
             this.statisztikaToolStripMenuItem.Name = "statisztikaToolStripMenuItem";
-            this.statisztikaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.statisztikaToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.statisztikaToolStripMenuItem.Text = "Statisztika";
             // 
             // szovegTxt
             // 
-            this.szovegTxt.Location = new System.Drawing.Point(9, 25);
-            this.szovegTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.szovegTxt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.szovegTxt.Location = new System.Drawing.Point(0, 24);
+            this.szovegTxt.Margin = new System.Windows.Forms.Padding(2);
             this.szovegTxt.Multiline = true;
             this.szovegTxt.Name = "szovegTxt";
             this.szovegTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.szovegTxt.Size = new System.Drawing.Size(330, 319);
+            this.szovegTxt.Size = new System.Drawing.Size(362, 319);
             this.szovegTxt.TabIndex = 1;
+            // 
+            // pro
+            // 
+            this.pro.AutoSize = true;
+            this.pro.Location = new System.Drawing.Point(-3, 346);
+            this.pro.Name = "pro";
+            this.pro.Size = new System.Drawing.Size(48, 13);
+            this.pro.TabIndex = 2;
+            this.pro.Text = "standard";
+            this.pro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pro_MouseClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 368);
+            this.Controls.Add(this.pro);
             this.Controls.Add(this.szovegTxt);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -185,6 +199,7 @@
         private System.Windows.Forms.ToolStripMenuItem tesztToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statisztikaToolStripMenuItem;
         private System.Windows.Forms.TextBox szovegTxt;
+        private System.Windows.Forms.Label pro;
     }
 }
 
