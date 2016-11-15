@@ -79,5 +79,28 @@ namespace Project
             
             szotar.ShowDialog();
         }
+
+        private void szovegTxt_TextChanged(object sender, EventArgs e)
+        {
+            string s = szovegTxt.Text;
+            string[] szo = s.Split(' ');
+        }
+
+        private void szovegTxt_MouseUp(object sender, MouseEventArgs e)
+        {
+            string keresett = szovegTxt.SelectedText;
+            string[] szo = keresett.Split(' ');
+            //MessageBox.Show(keresett);
+            foreach(string s in szo){
+                Form3 szotar = new Form3(s, con, 1);
+                szotar.Width = this.Width;
+                szotar.Show();
+            }
+            /*Form3 szotar = new Form3(keresett, con, 1);
+            szotar.Width = this.Width;
+            szotar.ShowDialog();*/
+
+
+        }
     }
 }

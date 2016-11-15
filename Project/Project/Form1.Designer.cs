@@ -153,6 +153,8 @@
             this.szovegTxt.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.szovegTxt.Size = new System.Drawing.Size(362, 319);
             this.szovegTxt.TabIndex = 1;
+            this.szovegTxt.TextChanged += new System.EventHandler(this.szovegTxt_TextChanged);
+            this.szovegTxt.MouseUp += new System.Windows.Forms.MouseEventHandler(this.szovegTxt_MouseUp);
             // 
             // pro
             // 
