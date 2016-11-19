@@ -102,5 +102,11 @@ namespace Project
 
 
         }
+
+        private void tesztToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 teszt = new Form4(con);
+            teszt.ShowDialog();
+        }
     }
 }

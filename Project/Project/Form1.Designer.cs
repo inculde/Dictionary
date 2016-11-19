@@ -127,20 +127,21 @@
             // szótárfüzetToolStripMenuItem
             // 
             this.szótárfüzetToolStripMenuItem.Name = "szótárfüzetToolStripMenuItem";
-            this.szótárfüzetToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.szótárfüzetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.szótárfüzetToolStripMenuItem.Text = "Szótárfüzet";
             this.szótárfüzetToolStripMenuItem.Click += new System.EventHandler(this.szótárfüzetToolStripMenuItem_Click);
             // 
             // tesztToolStripMenuItem
             // 
             this.tesztToolStripMenuItem.Name = "tesztToolStripMenuItem";
-            this.tesztToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.tesztToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tesztToolStripMenuItem.Text = "Teszt";
+            this.tesztToolStripMenuItem.Click += new System.EventHandler(this.tesztToolStripMenuItem_Click);
             // 
             // statisztikaToolStripMenuItem
             // 
             this.statisztikaToolStripMenuItem.Name = "statisztikaToolStripMenuItem";
-            this.statisztikaToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.statisztikaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.statisztikaToolStripMenuItem.Text = "Statisztika";
             // 
             // szovegTxt

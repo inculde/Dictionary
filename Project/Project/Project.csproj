@@ -85,6 +85,10 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs" />
     <Compile Include="szoszedet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +106,7 @@
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx" />
     <EmbeddedResource Include="szoszedet.resx">
       <DependentUpon>szoszedet.cs</DependentUpon>
     </EmbeddedResource>
