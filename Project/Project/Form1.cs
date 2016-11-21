@@ -108,5 +108,11 @@ namespace Project
             Form4 teszt = new Form4(con);
             teszt.ShowDialog();
         }
+
+        private void statisztikaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statisztika stat = new statisztika(con);
+            stat.ShowDialog();
+        }
     }
 }

@@ -143,6 +143,7 @@
             this.statisztikaToolStripMenuItem.Name = "statisztikaToolStripMenuItem";
             this.statisztikaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.statisztikaToolStripMenuItem.Text = "Statisztika";
+            this.statisztikaToolStripMenuItem.Click += new System.EventHandler(this.statisztikaToolStripMenuItem_Click);
             // 
             // szovegTxt
             // 
