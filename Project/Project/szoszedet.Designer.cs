@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(szoszedet));
             this.dbDataSet = new Project.dbDataSet();
             this.vocabularyDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
@@ -48,7 +49,7 @@
             this.vocabularyDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.vocabularyDataGridView.Location = new System.Drawing.Point(0, 0);
             this.vocabularyDataGridView.Name = "vocabularyDataGridView";
-            this.vocabularyDataGridView.RowHeadersWidth = 25;
+            this.vocabularyDataGridView.RowHeadersWidth = 10;
             this.vocabularyDataGridView.Size = new System.Drawing.Size(362, 339);
             this.vocabularyDataGridView.TabIndex = 1;
             this.vocabularyDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.vocabularyDataGridView_KeyDown);
@@ -60,8 +61,9 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(362, 368);
             this.Controls.Add(this.vocabularyDataGridView);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "szoszedet";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Szószedet";
             this.Load += new System.EventHandler(this.szoszedet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();

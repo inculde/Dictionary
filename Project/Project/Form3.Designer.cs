@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.szoszedetButton = new System.Windows.Forms.Button();
             this.szoListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
@@ -62,7 +63,9 @@
             this.ClientSize = new System.Drawing.Size(284, 112);
             this.Controls.Add(this.szoListBox);
             this.Controls.Add(this.szoszedetButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form3";
             this.ResumeLayout(false);
 

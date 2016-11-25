@@ -31,11 +31,15 @@ namespace Project
         {
             if (e.KeyCode == Keys.Delete)
             {
-                string l1 = vocabularyDataGridView.CurrentRow.Cells[0].Value.ToString();
-                string l2 = vocabularyDataGridView.CurrentRow.Cells[1].Value.ToString();
-                string comtext = "delete from Vocabulary where L1='" + l1 + "' and L2='" + l2 + "'";
-                adatManipulacio(con, comtext);
-                adatMegjelenites(con, vocabularyDataGridView, "select * from Vocabulary");
+                try
+                {
+                    string l1 = vocabularyDataGridView.CurrentRow.Cells[0].Value.ToString();
+                    string l2 = vocabularyDataGridView.CurrentRow.Cells[1].Value.ToString();
+                    string comtext = "delete from Vocabulary where L1='" + l1 + "' and L2='" + l2 + "'";
+                    adatManipulacio(con, comtext);
+                    adatMegjelenites(con, vocabularyDataGridView, "select * from Vocabulary");
+                }
+                catch (Exception ex) { }
             }
         } 
 

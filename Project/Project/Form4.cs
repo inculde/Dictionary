@@ -80,59 +80,116 @@ namespace Project
                 }
                 
             }
-            visszajelzes.Text = helyesDarab.ToString()+" helyes válasz van";
+            string mes= helyesDarab.ToString()+" helyes válasz van!";
             DateTime most = DateTime.Now;
             string pro = most.Year + "-";
             pro += most.Month + "-";
             pro += most.Day;
-            visszajelzes.Text += " " + pro;
+            //visszajelzes.Text += " " + pro;
 
             
             string comtext = "insert into Statistic (Date, Point) values ('" + pro + "', " + helyesDarab + ")";
             adatManipulacio(con, comtext);
+
+            MessageBox.Show(mes);
+            this.Close();
 
         }
 
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            kerdesek = new Label[10];
-            valaszok = new TextBox[10];
-            for (int i=0; i<10; i++)
+            if (szavak.Count() < 10)
             {
-                kerdesek[i] = new Label()
+                kerdesek = new Label[szavak.Count()];
+                valaszok = new TextBox[szavak.Count()];
+                for (int i = 0; i < szavak.Count(); i++)
                 {
-                    Text = "[ ]",
-                    Height = 20,
-                    Width = 100,
-                    Location = new Point(35, 10 + i * 30),
-                    Visible = true,
-                };
-                valaszok[i] = new TextBox()
+                    kerdesek[i] = new Label()
+                    {
+                        Text = "[ ]",
+                        Height = 20,
+                        Width = 100,
+                        Location = new Point(35, 10 + i * 30),
+                        Visible = true,
+                    };
+                    valaszok[i] = new TextBox()
+                    {
+                        Text = "",
+                        Height = 20,
+                        Width = 100,
+                        Location = new Point(150, 10 + i * 30),
+                        Visible = true,
+                    };
+                    this.Controls.Add(kerdesek[i]);
+                    this.Controls.Add(valaszok[i]);
+                }
+                //azért van, hogy 10 különböző szót generáljon
+                if (szavak.Count() != 0)
                 {
-                    Text = "",
-                    Height = 20,
-                    Width = 100,
-                    Location = new Point(150, 10 + i * 30),
-                    Visible = true,
-                };
-                this.Controls.Add(kerdesek[i]);
-                this.Controls.Add(valaszok[i]);
-            }
-            //azért van, hogy 10 különböző szót generáljon
-            foreach (string element in szavak)
-            {
-                adhato.Add(element);
-            }
-            int index;
-            for (int j = 0; j < 10; j++)
-            {
-                adhatoDarab = adhato.Count();
-                index = veletlen.Next(0, adhatoDarab);
-                kerdesek[j].Text= adhato.ElementAt(index);
-                adhato.Remove(adhato.ElementAt(index));
+                    foreach (string element in szavak)
+                    {
+                        adhato.Add(element);
+                    }
+                    int index;
+                    for (int j = 0; j < 10; j++)
+                    {
+                        adhatoDarab = adhato.Count();
+                        index = veletlen.Next(0, adhatoDarab);
+                        kerdesek[j].Text = adhato.ElementAt(index);
+                        adhato.Remove(adhato.ElementAt(index));
+                    }
+                }
+                else
+                {
+                    okBtn.Visible = false;
+                    MessageBox.Show("Nincs szó, amiből tesztet lehetne generálni");
+                    this.Close();
 
+                }
             }
+            else
+            {
+                kerdesek = new Label[10];
+                valaszok = new TextBox[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    kerdesek[i] = new Label()
+                    {
+                        Text = "[ ]",
+                        Height = 20,
+                        Width = 100,
+                        Location = new Point(35, 10 + i * 30),
+                        Visible = true,
+                    };
+                    valaszok[i] = new TextBox()
+                    {
+                        Text = "",
+                        Height = 20,
+                        Width = 100,
+                        Location = new Point(150, 10 + i * 30),
+                        Visible = true,
+                    };
+                    this.Controls.Add(kerdesek[i]);
+                    this.Controls.Add(valaszok[i]);
+                }
+                //azért van, hogy 10 különböző szót generáljon
+                    foreach (string element in szavak)
+                    {
+                        adhato.Add(element);
+                    }
+                    int index;
+                    for (int j = 0; j < 10; j++)
+                    {
+                        adhatoDarab = adhato.Count();
+                        index = veletlen.Next(0, adhatoDarab);
+                        kerdesek[j].Text = adhato.ElementAt(index);
+                        adhato.Remove(adhato.ElementAt(index));
+                    }
+                
+            }
+                        
+
 
         }
 

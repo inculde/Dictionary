@@ -41,6 +41,7 @@ namespace Project
             comtext=comtext.Remove((comtext.Length) - 2);
 
             adatManipulacio(con, comtext);
+            this.Close();
         }
 
         public void adatManipulacio(SqlConnection con, string comtext)
