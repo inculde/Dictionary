@@ -35,8 +35,10 @@ namespace Project
         {
             string comtext = "insert into Vocabulary (L1, L2) values ";
             foreach (DataRowView item in szoListBox.Items)
-            {                
-                comtext += "('" + this.Text + "', '" + item.Row[szoListBox.ValueMember].ToString() + "'), ";                
+            {
+                string szo=item.Row[szoListBox.ValueMember].ToString();
+                if (this.Text != " " && this.Text != "" && szo!= " " && szo!="")
+                    comtext += "('" + this.Text + "', '" + szo + "'), ";                
             }
             comtext=comtext.Remove((comtext.Length) - 2);
 

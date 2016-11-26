@@ -46,11 +46,11 @@
             this.vocabularyDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vocabularyDataGridView.BackgroundColor = System.Drawing.SystemColors.Control;
             this.vocabularyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vocabularyDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.vocabularyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vocabularyDataGridView.Location = new System.Drawing.Point(0, 0);
             this.vocabularyDataGridView.Name = "vocabularyDataGridView";
             this.vocabularyDataGridView.RowHeadersWidth = 10;
-            this.vocabularyDataGridView.Size = new System.Drawing.Size(362, 339);
+            this.vocabularyDataGridView.Size = new System.Drawing.Size(362, 368);
             this.vocabularyDataGridView.TabIndex = 1;
             this.vocabularyDataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.vocabularyDataGridView_KeyDown);
             // 

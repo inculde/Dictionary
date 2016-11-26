@@ -42,7 +42,10 @@ namespace Project
 
             foreach (DataRow row in dt.Rows)
             {
-                szavak.Add(row["L1"].ToString());
+                string szo = row["L1"].ToString();
+                System.Console.WriteLine(szo);
+                if(szo != " " && szo!="")
+                    szavak.Add(row["L1"].ToString());
 
             }
 
@@ -53,7 +56,10 @@ namespace Project
             da.Fill(dt);
             foreach (DataRow row in dt.Rows)
             {
-                szavak.Add(row["L2"].ToString());
+                string szo = row["L2"].ToString();
+                System.Console.WriteLine(szo);
+                if (szo != " " && szo != "")
+                    szavak.Add(row["L2"].ToString());
 
             }
 
@@ -66,31 +72,26 @@ namespace Project
         {
             int helyesDarab = 0;
             bool[] helyes = new bool[10];
-            for (int j=0; j<10; j++)
+            for (int j = 0; j < kerdesek.Count(); j++)
             {
-                helyes[j] = true;
+                helyes[j] = helyese(kerdesek[j].Text, valaszok[j].Text);
             }
-            for (int k=0; k<10; k++)
+
+            for (int k = 0; k < 10; k++)
             {
-                //ide kellene a válasz ellenőrzése, helyes válasz esetén a helyes k. eleme=true, egyébként false
-                helyes[k] = helyese(kerdesek[k].Text, valaszok[k].Text);
                 if (helyes[k] == true)
                 {
                     helyesDarab++;
                 }
-                
             }
-            string mes= helyesDarab.ToString()+" helyes válasz van!";
+            string mes = helyesDarab.ToString() + " helyes válasz van!";
             DateTime most = DateTime.Now;
             string pro = most.Year + "-";
             pro += most.Month + "-";
             pro += most.Day;
             //visszajelzes.Text += " " + pro;
-
-            
             string comtext = "insert into Statistic (Date, Point) values ('" + pro + "', " + helyesDarab + ")";
             adatManipulacio(con, comtext);
-
             MessageBox.Show(mes);
             this.Close();
 
@@ -99,56 +100,14 @@ namespace Project
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            if (szavak.Count() < 10)
+            foreach (string szo in szavak)
             {
-                kerdesek = new Label[szavak.Count()];
-                valaszok = new TextBox[szavak.Count()];
-                for (int i = 0; i < szavak.Count(); i++)
+                if (szo != "")
                 {
-                    kerdesek[i] = new Label()
-                    {
-                        Text = "[ ]",
-                        Height = 20,
-                        Width = 100,
-                        Location = new Point(35, 10 + i * 30),
-                        Visible = true,
-                    };
-                    valaszok[i] = new TextBox()
-                    {
-                        Text = "",
-                        Height = 20,
-                        Width = 100,
-                        Location = new Point(150, 10 + i * 30),
-                        Visible = true,
-                    };
-                    this.Controls.Add(kerdesek[i]);
-                    this.Controls.Add(valaszok[i]);
-                }
-                //azért van, hogy 10 különböző szót generáljon
-                if (szavak.Count() != 0)
-                {
-                    foreach (string element in szavak)
-                    {
-                        adhato.Add(element);
-                    }
-                    int index;
-                    for (int j = 0; j < 10; j++)
-                    {
-                        adhatoDarab = adhato.Count();
-                        index = veletlen.Next(0, adhatoDarab);
-                        kerdesek[j].Text = adhato.ElementAt(index);
-                        adhato.Remove(adhato.ElementAt(index));
-                    }
-                }
-                else
-                {
-                    okBtn.Visible = false;
-                    MessageBox.Show("Nincs szó, amiből tesztet lehetne generálni");
-                    this.Close();
-
+                    adhato.Add(szo);
                 }
             }
-            else
+            if (adhato.Count() > 10)
             {
                 kerdesek = new Label[10];
                 valaszok = new TextBox[10];
@@ -173,23 +132,47 @@ namespace Project
                     this.Controls.Add(kerdesek[i]);
                     this.Controls.Add(valaszok[i]);
                 }
-                //azért van, hogy 10 különböző szót generáljon
-                    foreach (string element in szavak)
-                    {
-                        adhato.Add(element);
-                    }
-                    int index;
-                    for (int j = 0; j < 10; j++)
-                    {
-                        adhatoDarab = adhato.Count();
-                        index = veletlen.Next(0, adhatoDarab);
-                        kerdesek[j].Text = adhato.ElementAt(index);
-                        adhato.Remove(adhato.ElementAt(index));
-                    }
-                
+                for (int j = 0; j < 10; j++)
+                {
+                    adhatoDarab = adhato.Count();
+                    int index = veletlen.Next(0, adhato.Count());
+                    kerdesek[j].Text = adhato.ElementAt(index);
+                    adhato.Remove(adhato.ElementAt(index));
+                }
             }
-                        
-
+            else
+            {
+                kerdesek = new Label[adhato.Count()];
+                valaszok = new TextBox[adhato.Count];
+                for (int i = 0; i < adhato.Count(); i++)
+                {
+                    kerdesek[i] = new Label()
+                    {
+                        Text = "[ ]",
+                        Height = 20,
+                        Width = 100,
+                        Location = new Point(35, 10 + i * 30),
+                        Visible = true,
+                    };
+                    valaszok[i] = new TextBox()
+                    {
+                        Text = "",
+                        Height = 20,
+                        Width = 100,
+                        Location = new Point(150, 10 + i * 30),
+                        Visible = true,
+                    };
+                    this.Controls.Add(kerdesek[i]);
+                    this.Controls.Add(valaszok[i]);
+                }
+                int adhatoDarab = adhato.Count();
+                for (int j = 0; j < adhatoDarab; j++)
+                {
+                    int index = veletlen.Next(0, adhato.Count());
+                    kerdesek[j].Text = adhato.ElementAt(index);
+                    adhato.Remove(adhato.ElementAt(index));
+                }
+            }
 
         }
 

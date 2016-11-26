@@ -20,7 +20,7 @@ namespace Project
         static SqlConnection con = new SqlConnection(conString);
 
         Form2 BeallitasForm = new Form2();
-        szoszedet SzoszedetForm = new szoszedet(con);
+        
 
         public Form1()
         {
@@ -98,6 +98,7 @@ namespace Project
 
         private void szótárfüzetToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            szoszedet SzoszedetForm = new szoszedet(con);
             SzoszedetForm.ShowDialog();
         }
        
